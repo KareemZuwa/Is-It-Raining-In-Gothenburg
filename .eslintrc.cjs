@@ -13,7 +13,8 @@ module.exports = {
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
-    'plugin:react/jsx-runtime'
+    'plugin:react/jsx-runtime',
+    'prettier'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'tailwind.config.js'],
   parser: '@typescript-eslint/parser',
@@ -22,6 +23,6 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
-    ],
+    ],"@typescript-eslint/prefer-nullish-coalescing": "error"
   },
 }
