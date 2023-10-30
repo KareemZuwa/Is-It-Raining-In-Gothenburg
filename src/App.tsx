@@ -1,8 +1,7 @@
-
 const App = () => {
   return (
     <>
-      <div>
+      <div className="bg-green-600">
         <header>Header</header>
         <main>Main</main>
       </div>
