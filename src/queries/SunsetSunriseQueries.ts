@@ -22,5 +22,6 @@ export const useSunsetSunriseQuery = () => {
 
       return (await response.json()) as OneDayForecast;
     },
+    refetchOnWindowFocus: true,
   });
 };

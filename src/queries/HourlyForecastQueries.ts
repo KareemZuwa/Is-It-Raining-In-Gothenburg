@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import { EnvironmentVariables } from "../interfaces/fiveDaysForecastsTypes";
 import { HourlyForecast } from "../interfaces/hourlyForecastTypes";
 
 export const useHourlyForecast = () => {
@@ -11,7 +10,7 @@ export const useHourlyForecast = () => {
   >({
     queryKey: ["hourlyForecastData"],
     queryFn: async () => {
-      const apiKey: EnvironmentVariables = import.meta.env.VITE_API_KEY;
+      const apiKey: string = import.meta.env.VITE_API_KEY as string;
 
       const response = await fetch(
         `http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/315909?apikey=${apiKey}&metric=true`

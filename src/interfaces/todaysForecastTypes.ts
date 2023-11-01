@@ -93,7 +93,7 @@ interface AirAndPollen {
   Type?: string; // Optional property
 }
 
-interface Day {
+interface DayNight {
   Icon: number;
   IconPhrase: string;
   HasPrecipitation: boolean;
@@ -156,8 +156,8 @@ interface DailyForecast {
   HoursOfSun: number;
   DegreeDaySummary: DegreeDaySummary;
   AirAndPollen: AirAndPollen[];
-  Day: Day;
-  Night: Day;
+  Day: DayNight;
+  Night: DayNight;
   Sources: string[];
   MobileLink: string;
   Link: string;
