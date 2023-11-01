@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSunsetSunriseQuery } from "./queries/SunsetSunriseQueries";
+import { CloudsBackground } from "./components/CloudsBackground";
 
 function isDaytime(sunriseTime: Date, sunsetTime: Date): boolean {
   const now = new Date();
@@ -36,12 +37,16 @@ const App = () => {
   return (
     <>
       <div
-        className={`min-h-screen min-w-screen flex flex-col transition-colors duration-1000 ease-in-out bg-gradient-to-b ${
+        className={`relative min-h-screen min-w-screen flex flex-col transition-colors duration-1000 ease-in-out bg-gradient-to-b ${
           isDay ? "from-sky-600 to-cyan-200" : "from-sky-950 to-sky-600"
         }`}
       >
-        <header className="font-poppins">Header</header>
-        <main>Main</main>
+        <CloudsBackground />
+
+        <div className="absolute top-0 left-0 w-full h-full">
+          {/* <header className="font-poppins">Header</header>
+          <main>Main</main> */}
+        </div>
       </div>
     </>
   );
