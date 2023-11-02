@@ -43,9 +43,11 @@ const App = () => {
       >
         <CloudsBackground />
 
-        <div className="absolute top-0 left-0 w-full h-full">
-          {/* <header className="font-poppins">Header</header>
-          <main>Main</main> */}
+        <div className="px-[100px] absolute top-0 left-0 w-full h-full z-10">
+          <div className="container mx-auto py-10">
+            <header className="font-poppins">Header</header>
+            <main>Main</main>
+          </div>
         </div>
       </div>
     </>

@@ -1,11 +1,11 @@
 export const CloudsBackground = () => {
   return (
-    <div className="min-h-screen max-w-screen-xl mx-auto">
-      <div>
-        <img src="/background/cloud-one.svg" alt="cloud-one" width="579" />
+    <div className="min-h-screen mx-16 flex justify-between overflow-hidden">
+      <div className="pt-[420px] ml-2.5">
+        <img src="/background/cloud-one.svg" alt="cloud-one" />
       </div>
-      <div>
-        <img src="/background/cloud-two.svg" alt="cloud-one" width="519" />
+      <div className="pt-[153px] mr-2.5">
+        <img src="/background/cloud-two.svg" alt="cloud-one" />
       </div>
     </div>
   );
