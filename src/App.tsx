@@ -41,9 +41,9 @@ const App = () => {
           isDay ? "from-sky-600 to-cyan-200" : "from-sky-950 to-sky-600"
         }`}
       >
-        <CloudsBackground />
+        <CloudsBackground isDay={isDay} />
 
-        <div className="px-[100px] absolute top-0 left-0 w-full h-full z-10">
+        <div className="px-[100px] absolute top-0 left-0 w-full h-full z-30">
           <div className="container mx-auto py-10">
             <header className="font-poppins">Header</header>
             <main>Main</main>
