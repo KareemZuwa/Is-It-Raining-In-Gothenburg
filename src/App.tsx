@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSunsetSunriseQuery } from "./queries/SunsetSunriseQueries";
 import { CloudsBackground } from "./components/CloudsBackground";
+import { Header } from "./components/Header";
+import { WeatherOverview } from "./components/WeatherOverview";
 
 function isDaytime(sunriseTime: Date, sunsetTime: Date): boolean {
   const now = new Date();
@@ -43,10 +45,10 @@ const App = () => {
       >
         <CloudsBackground isDay={isDay} />
 
-        <div className="px-[100px] absolute top-0 left-0 w-full h-full z-30">
-          <div className="container mx-auto py-10">
-            <header className="font-poppins">Header</header>
-            <main>Main</main>
+        <div className="px-[100px] absolute inset-0 w-full h-full z-30">
+          <div className="container m-auto">
+            <Header />
+            <WeatherOverview />
           </div>
         </div>
       </div>

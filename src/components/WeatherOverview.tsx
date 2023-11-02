@@ -1,13 +1,13 @@
 export const WeatherOverview = () => {
-
   return (
-    <div className="text-white">
-      WeatherOverview
-      <div className="mt-4">
+    <main className="text-white flex flex-col justify-between">
+      <section className="flex justify-between">
+        <div>Weather Today</div>
         <div>Forecast Headline</div>
-      </div>
-      <div>Weather Today</div>
-      <div>Weather Cards</div>
-    </div>
+      </section>
+      <section>
+        <div>Weather Cards</div>
+      </section>
+    </main>
   );
 };
