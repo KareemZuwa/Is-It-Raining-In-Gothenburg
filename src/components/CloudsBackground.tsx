@@ -9,8 +9,8 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
         <img src="/background/cloud-one.svg" alt="cloud-one" />
       </div>
       <div className="relative pt-[153px] mr-2">
-        {isDay && (
-          <span className="absolute pl-4 z-0">
+        {!isDay && (
+          <span className="transition duration-[5000ms] ease-in-out absolute pl-4 z-0">
             <img src="../background/Stars.svg" alt="stars" />
           </span>
         )}

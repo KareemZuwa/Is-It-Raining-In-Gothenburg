@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { OneDayForecast } from "../interfaces/todaysForecastTypes";
 
-export const useSunsetSunriseQuery = () => {
+export const useOneDayForecastQuery = () => {
   return useQuery<
     OneDayForecast,
     Error,
