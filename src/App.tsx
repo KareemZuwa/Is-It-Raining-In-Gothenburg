@@ -15,15 +15,14 @@ const App = () => {
   const [isDay, setIsDay] = useState<boolean>(true);
 
   useEffect(() => {
-    const checkDaytime = () => {
-      const newIsDay = isDaytime(sunrise, "2023-11-02T18:54:00+01:00");
+    const checkDaytime = async () => {
+      const newIsDay = isDaytime(sunrise, sunset);
       if (newIsDay !== isDay) {
         setIsDay(newIsDay);
-        void refetch(); // Trigger a refetch when the day changes
+        await refetch(); // Trigger a refetch when the day changes
       }
     };
 
-    checkDaytime(); // Initial check
     // Set up an interval to periodically check for changes in day/night
     const intervalId = setInterval(checkDaytime, 1000); // Check every minute (adjust the interval as needed)
 
@@ -40,10 +39,15 @@ const App = () => {
           isDay ? "from-sky-600 to-cyan-200" : "from-sky-950 to-sky-600"
         }`}
       >
+        {/* <div className="absolute w-full z-0 flex justify-between mt-[4.813rem] border"> */}
+          {/* <div className="w-[68px] h-[0px] border border-white border-solid overflow-hidden"></div>
+          <div className="absolute left-[18.25rem] w-[509px] h-[0px] border border-white border-solid overflow-hidden mr-64"></div>
+          <div className="w-[175px] h-[0px] border border-white border-solid overflow-hidden"></div> */}
+        {/* </div> */}
         <CloudsBackground isDay={isDay} />
 
         <div className="px-[100px] absolute inset-0 w-full h-full z-30">
-          <div className="container m-auto">
+          <div className="container m-auto max-w-screen-xl">
             <Header />
             <WeatherOverview />
           </div>
