@@ -32,7 +32,7 @@ const App = () => {
   return (
     <>
       <div
-        className={`fixed inset-0 overflow-y-auto h-screen min-w-screen flex flex-col transition duration-[5000ms] ease-in-out bg-gradient-to-b ${
+        className={`fixed inset-0 overflow-y-auto h-screen min-w-screen flex flex-col transition-all duration-[5000ms] ease-in-out bg-gradient-to-b ${
           isDay ? "from-sky-600 to-cyan-200" : "from-sky-950 to-sky-600"
         }`}
       >
