@@ -7,12 +7,10 @@ import { isDaytime } from "./utils/DaytimeChecker";
 
 const App = () => {
   const { data, refetch } = useOneDayForecastQuery();
+  const [isDay, setIsDay] = useState<boolean>(true);
 
   const sunrise = data?.DailyForecasts[0]?.Sun?.Rise;
   const sunset = data?.DailyForecasts[0]?.Sun?.Set;
-  console.log(sunrise, sunset);
-
-  const [isDay, setIsDay] = useState<boolean>(true);
 
   useEffect(() => {
     const checkDaytime = async () => {
@@ -30,7 +28,6 @@ const App = () => {
       clearInterval(intervalId); // Clean up the interval on component unmount
     };
   }, [sunrise, sunset, isDay, refetch]);
-  console.log(isDay);
 
   return (
     <>
@@ -40,8 +37,6 @@ const App = () => {
         }`}
       >
         <CloudsBackground isDay={isDay} />
-        
-        
 
         <div className="px-[50px] xl:px-[100px] absolute inset-0 w-full h-full z-30">
           <div className="container m-auto max-w-screen-xl">
