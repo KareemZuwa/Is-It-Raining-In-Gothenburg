@@ -7,6 +7,7 @@ interface CloudsBackgroundProps {
 
 export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
   const isRain = false;
+  const isSnow = false;
   return (
     <div className="absolute inset-0 m-auto max-w-screen-2xl">
       <div className="mx-16 flex justify-between overflow-hidden">
@@ -29,7 +30,7 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
             alt="cloud-two"
           />
           {isRain && <Raindrops />}
-          <SnowFall />
+          {isSnow && <SnowFall />}
         </div>
       </div>
     </div>
