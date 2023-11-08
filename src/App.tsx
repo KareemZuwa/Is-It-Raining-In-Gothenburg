@@ -38,7 +38,7 @@ const App = () => {
       >
         <CloudsBackground isDay={isDay} />
 
-        <div className="px-[50px] xl:px-[100px] absolute inset-0 w-full h-full z-30">
+        <div className="px-5 sm:px-[50px] xl:px-[100px] absolute inset-0 w-full h-full z-30">
           <div className="container m-auto max-w-screen-xl">
             <Header />
             <WeatherOverview />
