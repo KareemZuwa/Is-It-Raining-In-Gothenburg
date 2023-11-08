@@ -1,8 +1,11 @@
+import { Raindrops } from "./Raindrops";
+
 interface CloudsBackgroundProps {
   isDay: boolean;
 }
 
 export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
+  const isRain = false;
   return (
     <div className="absolute inset-0 m-auto max-w-screen-2xl">
       <div className="mx-16 flex justify-between overflow-hidden">
@@ -24,6 +27,7 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
             src="/background/cloud-two.svg"
             alt="cloud-two"
           />
+          {!isRain && <Raindrops />}
         </div>
       </div>
     </div>
