@@ -1,4 +1,5 @@
 import { Raindrops } from "./Raindrops";
+import { SnowFall } from "./SnowFall";
 
 interface CloudsBackgroundProps {
   isDay: boolean;
@@ -28,6 +29,7 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
             alt="cloud-two"
           />
           {isRain && <Raindrops />}
+          <SnowFall />
         </div>
       </div>
     </div>
