@@ -7,7 +7,11 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
     <div className="absolute inset-0 m-auto max-w-screen-2xl">
       <div className="mx-16 flex justify-between overflow-hidden">
         <div className="pt-[500px] md:pt-[420px]">
-          <img src="/background/cloud-one.svg" alt="cloud-one" />
+          <img
+            className="animate-fade-down animate-once animate-duration-[5000ms] animate-ease-in-out"
+            src="/background/cloud-one.svg"
+            alt="cloud-one"
+          />
         </div>
         <div className="relative pt-[420px] md:pt-36">
           {!isDay && (
@@ -16,7 +20,7 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
             </span>
           )}
           <img
-            className="relative z-10"
+            className="relative z-10 animate-fade-down animate-once animate-duration-[5000ms] animate-ease-in-out"
             src="/background/cloud-two.svg"
             alt="cloud-two"
           />
