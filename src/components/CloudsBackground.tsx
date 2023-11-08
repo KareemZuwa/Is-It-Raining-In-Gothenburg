@@ -1,5 +1,8 @@
+import { Moon } from "./Moon";
 import { Raindrops } from "./Raindrops";
 import { SnowFall } from "./SnowFall";
+import { Stars } from "./Stars";
+import { Sun } from "./Sun";
 
 interface CloudsBackgroundProps {
   isDay: boolean;
@@ -8,6 +11,7 @@ interface CloudsBackgroundProps {
 export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
   const isRain = false;
   const isSnow = false;
+
   return (
     <div className="absolute inset-0 m-auto max-w-screen-2xl">
       <div className="mx-16 flex justify-between overflow-hidden">
@@ -20,10 +24,9 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
         </div>
         <div className="relative pt-[420px] md:pt-36">
           {!isDay && (
-            <span className="w-10 sm:w-auto transition duration-[5000ms] ease-in-out absolute pl-4 pt-8 z-0 animate-fade animate-once animate-duration-[5000ms]">
-              <img src="/background/Stars.svg" alt="stars" />
-            </span>
+            <Stars />
           )}
+          {isDay ? <Sun /> : <Moon />}
           <img
             className="relative z-10 animate-fade-down animate-once animate-duration-[5000ms] animate-ease-in-out"
             src="/background/cloud-two.svg"
