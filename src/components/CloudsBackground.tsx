@@ -27,7 +27,7 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
             src="/background/cloud-two.svg"
             alt="cloud-two"
           />
-          {!isRain && <Raindrops />}
+          {isRain && <Raindrops />}
         </div>
       </div>
     </div>
