@@ -3,7 +3,7 @@ import { useOneDayForecastQuery } from "./queries/OneDayForecastQueries";
 import { CloudsBackground } from "./components/CloudsBackground";
 import { Header } from "./components/Header";
 import { WeatherOverview } from "./components/WeatherOverview";
-import { isDaytime } from "./utils/DaytimeChecker";
+import { isDaytime } from "./utils/daytimeChecker";
 
 const App = () => {
   const { data, refetch } = useOneDayForecastQuery();

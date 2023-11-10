@@ -1,3 +1,4 @@
+import { useOneDayForecastQuery } from "../queries/OneDayForecastQueries";
 import { Moon } from "./Moon";
 import { Raindrops } from "./Raindrops";
 import { SnowFall } from "./SnowFall";
@@ -9,6 +10,9 @@ interface CloudsBackgroundProps {
 }
 
 export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
+  const { data } = useOneDayForecastQuery();
+  console.log(data?.DailyForecasts[0].Day.Icon)
+  console.log(data?.DailyForecasts[0].Night.Icon)
   const isRain = false;
   const isSnow = false;
 
@@ -23,9 +27,7 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
           />
         </div>
         <div className="relative pt-[420px] md:pt-36">
-          {!isDay && (
-            <Stars />
-          )}
+          {!isDay && <Stars />}
           {isDay ? <Sun /> : <Moon />}
           <img
             className="relative z-10 animate-fade-down animate-once animate-duration-[5000ms] animate-ease-in-out"
