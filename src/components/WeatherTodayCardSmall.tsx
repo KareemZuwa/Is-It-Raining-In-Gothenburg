@@ -14,10 +14,10 @@ export const WeatherTodayCardSmall = ({
   day,
   month,
   weatherDayIcon,
-  maxTemprature
+  maxTemprature,
 }: WeatherTodayCardSmallProps) => {
   return (
-    <div className="relative text-center xxs:hidden py-8 shadow-2xl">
+    <div className="relative text-center xxxs:hidden py-8 shadow-2xl">
       <section>
         <article>
           {weekDay && day && month == null ? (
@@ -35,22 +35,22 @@ export const WeatherTodayCardSmall = ({
           )}
         </article>
         <article className="mt-4 flex flex-col items-center">
-        {weatherDayIcon == null ? (
-              <WeatherIcon iconNumber={7} iconSize={"xl"} />
-            ) : (
-              <WeatherIcon iconNumber={weatherDayIcon} iconSize={"xl"} />
-            )}
+          {weatherDayIcon == null ? (
+            <WeatherIcon iconNumber={7} iconSize={"xl"} />
+          ) : (
+            <WeatherIcon iconNumber={weatherDayIcon} iconSize={"xl"} />
+          )}
         </article>
         <article className="mt-4 flex flex-col items-center">
-        {maxTemprature == null ? (
-              <div className="rounded mb-4 h-8 w-full animate-pulse bg-white"></div>
-            ) : (
-              <div className="flex justify-between">
-                <h1 className="text-[3rem] font-semibold">
-                  {Math.ceil(maxTemprature)}º
-                </h1>
-              </div>
-            )}
+          {maxTemprature == null ? (
+            <div className="rounded mb-4 h-8 w-full animate-pulse bg-white"></div>
+          ) : (
+            <div className="flex justify-between">
+              <h1 className="text-[3rem] font-semibold">
+                {Math.ceil(maxTemprature)}º
+              </h1>
+            </div>
+          )}
         </article>
       </section>
     </div>

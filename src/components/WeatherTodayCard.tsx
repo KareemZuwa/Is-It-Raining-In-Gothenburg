@@ -28,9 +28,9 @@ export const WeatherTodayCard = () => {
   const weatherNightIcon = data?.DailyForecasts[0].Night.Icon;
 
   return (
-    <article className="mt-7 sm:mt-24 lg:mr-4 rounded-xl xxs:h-[289px] md:min-w-[38.25rem] shadow-2xl relative">
+    <article className="mt-7 sm:mt-24 lg:mr-4 rounded-xl xxxs:h-[289px] md:min-w-[38.25rem] shadow-2xl relative">
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-200 to-white opacity-70 rounded-xl"></div>
-      <div className="relative h-full p-8 hidden xxs:grid grid-cols-2 xs:grid-cols-3">
+      <div className="relative h-full p-8 hidden xxxs:grid grid-cols-2 xs:grid-cols-3">
         <section className="flex flex-col justify-between">
           <article>
             {weatherDate == null ? (
@@ -47,7 +47,7 @@ export const WeatherTodayCard = () => {
               </div>
             )}
           </article>
-          <article className="xxs:w-36 xs:w-3/4">
+          <article className="xxxs:w-36 xs:w-3/4">
             {maxTemprature == null ? (
               <div className="rounded mb-4 h-8 w-full animate-pulse bg-white"></div>
             ) : (
@@ -104,7 +104,7 @@ export const WeatherTodayCard = () => {
               <p className="flex text-xs justify-center">{`"${weatherDayIconPhrase}"`}</p>
             )}
           </article>
-          <article className="space-x-4 hidden xxs:flex items-center self-end mr-6 justify-between">
+          <article className="space-x-4 hidden xxxs:flex items-center self-end mr-6 justify-between">
             <h1 className="font-semibold pt-4">Night:</h1>
             {weatherNightIcon == null ? (
               <WeatherIcon iconNumber={7} iconSize={"sm"} />

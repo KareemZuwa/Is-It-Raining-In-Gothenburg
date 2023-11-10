@@ -3,7 +3,7 @@ import { WeatherTodayCard } from "./WeatherTodayCard";
 
 export const WeatherOverview = () => {
   return (
-    <main className="text-white flex flex-col justify-between">
+    <main className="text-white flex flex-col justify-between h-full">
       <section className="lg:grid grid-cols-2">
         <WeatherTodayCard />
       </section>

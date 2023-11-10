@@ -44,7 +44,6 @@ const App = () => {
             <WeatherOverview />
           </div>
         </div>
-        
       </div>
     </>
   );
