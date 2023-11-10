@@ -1,6 +1,11 @@
 import { useOneDayForecastQuery } from "../queries/OneDayForecastQueries";
-import { getMonthString, getNumericDayString, getWeekDayString } from "../utils/dateUtils";
+import {
+  getMonthString,
+  getNumericDayString,
+  getWeekDayString,
+} from "../utils/dateUtils";
 import { WeatherIcon } from "./WeatherIcon";
+import { WeatherTodayCardSmall } from "./WeatherTodayCardSmall";
 
 export const WeatherTodayCard = () => {
   const { data } = useOneDayForecastQuery();
@@ -23,16 +28,16 @@ export const WeatherTodayCard = () => {
   const weatherNightIcon = data?.DailyForecasts[0].Night.Icon;
 
   return (
-    <article className="mt-24 lg:mr-4 rounded-xl h-[289px] md:min-w-[38.25rem] shadow-md relative">
+    <article className="mt-7 sm:mt-24 lg:mr-4 rounded-xl xxs:h-[289px] md:min-w-[38.25rem] shadow-md relative">
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-200 to-white opacity-70 rounded-xl"></div>
-      <div className="relative h-full p-8 grid grid-cols-3">
+      <div className="relative h-full p-8 hidden xxs:grid grid-cols-2 xs:grid-cols-3">
         <section className="flex flex-col justify-between">
           <article>
             {weatherDate == null ? (
-                 <div>
-                 <h1 className="rounded mb-4 h-8 w-full animate-pulse bg-white"></h1>
-                 <h2 className="rounded h-4 w-full animate-pulse bg-white"></h2>
-               </div>
+              <div>
+                <h1 className="rounded mb-4 h-8 w-full animate-pulse bg-white"></h1>
+                <h2 className="rounded h-4 w-full animate-pulse bg-white"></h2>
+              </div>
             ) : (
               <div>
                 <h1 className="text-[2rem] font-semibold">{weekDay}</h1>
@@ -42,7 +47,7 @@ export const WeatherTodayCard = () => {
               </div>
             )}
           </article>
-          <article className="w-3/4">
+          <article className="xxs:w-36 xs:w-3/4">
             {maxTemprature == null ? (
               <div className="rounded mb-4 h-8 w-full animate-pulse bg-white"></div>
             ) : (
@@ -66,7 +71,7 @@ export const WeatherTodayCard = () => {
           </article>
         </section>
 
-        <section className="flex flex-col items-center text-center justify-around">
+        <section className="hidden xs:flex flex-col items-center text-center justify-around">
           <article>
             <h2 className="font-semibold">Chance of rain</h2>
             {rainProbability == null ? (
@@ -99,7 +104,7 @@ export const WeatherTodayCard = () => {
               <p className="flex text-[0.625] justify-center">{`"${weatherDayIconPhrase}"`}</p>
             )}
           </article>
-          <article className="space-x-4 flex items-center self-center justify-between">
+          <article className="space-x-4 hidden xxs:flex items-center self-end mr-6 justify-between">
             <h1 className="font-semibold pt-4">Night:</h1>
             {weatherNightIcon == null ? (
               <WeatherIcon iconNumber={7} iconSize={"sm"} />
@@ -109,6 +114,14 @@ export const WeatherTodayCard = () => {
           </article>
         </section>
       </div>
+      <WeatherTodayCardSmall
+        weekDay={weekDay}
+        day={day}
+        month={month}
+        weatherDayIcon={weatherDayIcon}
+        weatherDayIconPhrase={weatherDayIconPhrase}
+        maxTemprature={maxTemprature}
+      />
     </article>
   );
 };

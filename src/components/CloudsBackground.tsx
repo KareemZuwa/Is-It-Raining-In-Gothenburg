@@ -17,7 +17,7 @@ export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
   const isSnow = false;
 
   return (
-    <div className="absolute inset-0 m-auto max-w-screen-2xl">
+    <div className="opacity-30 lg:opacity-100 absolute inset-0 m-auto max-w-screen-2xl">
       <div className="mx-16 flex justify-between overflow-hidden">
         <div className="pt-[500px] md:pt-[420px]">
           <img
