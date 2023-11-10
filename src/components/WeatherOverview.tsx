@@ -7,7 +7,7 @@ export const WeatherOverview = () => {
       <section className="lg:grid grid-cols-2">
         <WeatherTodayCard />
       </section>
-      <section className="mt-24 flex justify-between">
+      <section className="mt-24">
         <WeatherCard />
       </section>
     </main>
