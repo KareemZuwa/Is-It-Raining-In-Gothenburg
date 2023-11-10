@@ -1,3 +1,4 @@
+import { WeatherCard } from "./WeatherCard";
 import { WeatherTodayCard } from "./WeatherTodayCard";
 
 export const WeatherOverview = () => {
@@ -7,10 +8,7 @@ export const WeatherOverview = () => {
         <WeatherTodayCard />
       </section>
       <section className="mt-24 flex justify-between">
-        <div className="w-[193px] h-[289px] bg-gradient-to-b from-cyan-200 to-white rounded-[10px] opacity-70 shadow-md flex items-center justify-center">Weather Cards</div>
-        <div className="w-[193px] h-[289px] bg-gradient-to-b from-cyan-200 to-white rounded-[10px] opacity-70 shadow-md flex items-center justify-center">Weather Cards</div>
-        <div className="w-[193px] h-[289px] bg-gradient-to-b from-cyan-200 to-white rounded-[10px] opacity-70 shadow-md flex items-center justify-center">Weather Cards</div>
-        <div className="w-[193px] h-[289px] bg-gradient-to-b from-cyan-200 to-white rounded-[10px] opacity-70 shadow-md flex items-center justify-center">Weather Cards</div>
+        <WeatherCard />
       </section>
     </main>
   );

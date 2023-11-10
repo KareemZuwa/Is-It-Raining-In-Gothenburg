@@ -17,20 +17,20 @@ export const WeatherTodayCardSmall = ({
   maxTemprature
 }: WeatherTodayCardSmallProps) => {
   return (
-    <div className="relative text-center xxs:hidden py-8">
+    <div className="relative text-center xxs:hidden py-8 shadow-2xl">
       <section>
         <article>
           {weekDay && day && month == null ? (
             <div>
-              <h1 className="rounded mb-4 h-8 w-full animate-pulse bg-white"></h1>
-              <h2 className="rounded h-4 w-full animate-pulse bg-white"></h2>
+              <h2 className="rounded mb-4 h-8 w-full animate-pulse bg-white"></h2>
+              <p className="rounded h-4 w-full animate-pulse bg-white"></p>
             </div>
           ) : (
             <div>
-              <h1 className="text-[2rem] font-semibold">{weekDay}</h1>
-              <h2 className="text-base">
+              <h2 className="text-[2rem] font-semibold">{weekDay}</h2>
+              <p className="text-base">
                 {day} {month}
-              </h2>
+              </p>
             </div>
           )}
         </article>

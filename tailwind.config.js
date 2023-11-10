@@ -15,6 +15,9 @@ export default {
       fontFamily: {
         sans: ['Poppins', 'sans'],
       },
+      fontSize: {
+        xxs: ['10px', '18px']
+      },
     },
   },
   plugins: [require('tailwindcss-animated')

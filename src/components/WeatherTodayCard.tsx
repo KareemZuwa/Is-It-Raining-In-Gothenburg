@@ -28,7 +28,7 @@ export const WeatherTodayCard = () => {
   const weatherNightIcon = data?.DailyForecasts[0].Night.Icon;
 
   return (
-    <article className="mt-7 sm:mt-24 lg:mr-4 rounded-xl xxs:h-[289px] md:min-w-[38.25rem] shadow-md relative">
+    <article className="mt-7 sm:mt-24 lg:mr-4 rounded-xl xxs:h-[289px] md:min-w-[38.25rem] shadow-2xl relative">
       <div className="absolute inset-0 bg-gradient-to-b from-cyan-200 to-white opacity-70 rounded-xl"></div>
       <div className="relative h-full p-8 hidden xxs:grid grid-cols-2 xs:grid-cols-3">
         <section className="flex flex-col justify-between">
@@ -40,7 +40,7 @@ export const WeatherTodayCard = () => {
               </div>
             ) : (
               <div>
-                <h1 className="text-[2rem] font-semibold">{weekDay}</h1>
+                <h1 className="text-4xl font-semibold">{weekDay}</h1>
                 <h2 className="text-base">
                   {day} {month}
                 </h2>
@@ -101,7 +101,7 @@ export const WeatherTodayCard = () => {
             {weatherDayIconPhrase == null ? (
               <p className="flex justify-center rounded mb-4 h-4 text-center w-16 animate-pulse bg-white"></p>
             ) : (
-              <p className="flex text-[0.625] justify-center">{`"${weatherDayIconPhrase}"`}</p>
+              <p className="flex text-xs justify-center">{`"${weatherDayIconPhrase}"`}</p>
             )}
           </article>
           <article className="space-x-4 hidden xxs:flex items-center self-end mr-6 justify-between">
