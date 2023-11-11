@@ -1,4 +1,5 @@
 import { WeatherCard } from "./WeatherCard";
+import { WeatherCardSmall } from "./WeatherCardSmall";
 import { WeatherTodayCard } from "./WeatherTodayCard";
 
 export const WeatherOverview = () => {
@@ -7,8 +8,9 @@ export const WeatherOverview = () => {
       <section className="lg:grid grid-cols-2">
         <WeatherTodayCard />
       </section>
-      <section className="mt-24">
+      <section className="mt-8 xxxs:mt-24">
         <WeatherCard />
+        <WeatherCardSmall />
       </section>
     </main>
   );

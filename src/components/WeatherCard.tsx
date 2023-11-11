@@ -11,9 +11,9 @@ export const WeatherCard = () => {
   const fourDaysForeCast = data?.DailyForecasts.slice(1);
 
   return (
-    <article className="xxs:flex flex-wrap justify-between -mx-4">
+    <article className="hidden xxs:flex flex-wrap justify-between -mx-4">
       {fourDaysForeCast == null ? (
-        <div>no data</div>
+        <div>No data</div>
       ) : (
         fourDaysForeCast.map((fourDays) => (
           <div
