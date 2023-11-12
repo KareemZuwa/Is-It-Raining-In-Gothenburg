@@ -32,7 +32,7 @@ export const WeatherCardSmall = () => {
                   <td className="px-3 py-2 text-2xl font-semibold">
                     {Math.ceil(fourDays.Temperature.Maximum.Value)}º
                   </td>
-                  <td className="pb-3 py-2 pr-1 text-sm">
+                  <td className="pb-3 py-2 pr-1">
                     <WeatherIcon
                       iconNumber={fourDays.Day.Icon}
                       iconSize={"sm"}

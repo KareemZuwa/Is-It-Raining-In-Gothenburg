@@ -101,7 +101,7 @@ export const WeatherTodayCard = () => {
             {weatherDayIconPhrase == null ? (
               <p className="flex justify-center rounded mb-4 h-4 text-center w-16 animate-pulse bg-white"></p>
             ) : (
-              <p className="flex text-xs justify-center">{`"${weatherDayIconPhrase}"`}</p>
+              <p className="pt-2.5 flex text-xs justify-center">{`"${weatherDayIconPhrase}"`}</p>
             )}
           </article>
           <article className="space-x-4 hidden xxxs:flex items-center self-end mr-6 justify-between">
