@@ -139,14 +139,7 @@ export const WeatherTodayCard = () => {
           </article>
         </section>
       </div>
-      <WeatherTodayCardSmall
-        weekDay={weekDay}
-        day={day}
-        month={month}
-        weatherDayIcon={weatherDayIcon}
-        weatherDayIconPhrase={weatherDayIconPhrase}
-        maxTemprature={maxTemprature}
-      />
+      <WeatherTodayCardSmall />
     </article>
   );
 };

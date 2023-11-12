@@ -22,8 +22,8 @@ export const WeatherCard = () => {
             No Weather Data for the upcoming four days were found
           </h1>
         </div>
-      ) : isLoading ? (
-        <div className="w-full flex justify-between">
+      ) : !isLoading ? (
+        <div className="w-full flex justify-between flex-wrap">
           <SkeletonCard />
           <SkeletonCard />
           <SkeletonCard />
