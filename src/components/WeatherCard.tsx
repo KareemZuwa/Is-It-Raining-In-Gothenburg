@@ -5,15 +5,30 @@ import {
   getNumericDayString,
   getWeekDayString,
 } from "../utils/dateUtils";
+// import { SkeletonText } from "../utils/SkeletonLoaders";
+// import { SkeletonImageLoader } from "../utils/SkeletonImageLoader";
+import { SkeletonCard } from "../utils/SkeletonCard";
 
 export const WeatherCard = () => {
-  const { data } = useFiveDaysForecast();
+  const { data, isLoading } = useFiveDaysForecast();
   const fourDaysForeCast = data?.DailyForecasts.slice(1);
+  console.log(fourDaysForeCast);
 
   return (
     <article className="hidden xxs:flex flex-wrap justify-between -mx-4">
-      {fourDaysForeCast == null ? (
-        <div>No data</div>
+      {fourDaysForeCast === undefined ? (
+        <div className="w-full flex flex-col items-center justify-center space-y-8">
+          <h1 className="text-xl">
+            No Weather Data for the upcoming four days were found
+          </h1>
+        </div>
+      ) : isLoading ? (
+        <div className="w-full flex justify-between">
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
+        </div>
       ) : (
         fourDaysForeCast.map((fourDays) => (
           <div

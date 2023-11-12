@@ -1,4 +1,6 @@
 import { useOneDayForecastQuery } from "../queries/OneDayForecastQueries";
+import { SkeletonImageLoader } from "../utils/SkeletonImageLoader";
+import { SkeletonText } from "../utils/SkeletonLoaders";
 import {
   getMonthString,
   getNumericDayString,
@@ -8,7 +10,7 @@ import { WeatherIcon } from "./WeatherIcon";
 import { WeatherTodayCardSmall } from "./WeatherTodayCardSmall";
 
 export const WeatherTodayCard = () => {
-  const { data } = useOneDayForecastQuery();
+  const { data, isLoading } = useOneDayForecastQuery();
 
   const weatherDate: Date | string =
     data?.DailyForecasts[0]?.Date == null
@@ -33,10 +35,15 @@ export const WeatherTodayCard = () => {
       <div className="relative h-full p-8 hidden xxxs:grid grid-cols-2 xs:grid-cols-3">
         <section className="flex flex-col justify-between">
           <article>
-            {weatherDate == null ? (
+            {weatherDate === undefined ? (
               <div>
-                <h1 className="rounded mb-4 h-8 w-full animate-pulse bg-white"></h1>
-                <h2 className="rounded h-4 w-full animate-pulse bg-white"></h2>
+                <h1 className="text-4xl font-semibold">No data</h1>
+                <h2 className="text-base">No data</h2>
+              </div>
+            ) : isLoading ? (
+              <div>
+                <SkeletonText fontSize={"5xl"} width={"w-3/4"} />
+                <SkeletonText fontSize={"base"} width={"w-3/4"} />
               </div>
             ) : (
               <div>
@@ -48,8 +55,12 @@ export const WeatherTodayCard = () => {
             )}
           </article>
           <article className="xxxs:w-36 xs:w-3/4">
-            {maxTemprature == null ? (
-              <div className="rounded mb-4 h-8 w-full animate-pulse bg-white"></div>
+            {maxTemprature === undefined ? (
+              <div className="flex justify-between">
+                <h1 className="text-[2rem] font-semibold">No Data</h1>
+              </div>
+            ) : isLoading ? (
+              <SkeletonText fontSize={"5xl"} width={"w-full"} />
             ) : (
               <div className="flex justify-between">
                 <h1 className="text-[2rem] font-semibold">Max:</h1>
@@ -58,8 +69,12 @@ export const WeatherTodayCard = () => {
                 </h1>
               </div>
             )}
-            {minTemprature == null ? (
-              <div className="rounded mt-2 h-8 w-full animate-pulse bg-white"></div>
+            {minTemprature === undefined ? (
+              <div className="flex justify-between">
+                <h1 className="text-[2rem] font-semibold">No Data</h1>
+              </div>
+            ) : isLoading ? (
+              <SkeletonText fontSize={"5xl"} width={"w-full"} />
             ) : (
               <div className="flex justify-between">
                 <h1 className="text-[2rem] font-semibold">Min:</h1>
@@ -74,16 +89,20 @@ export const WeatherTodayCard = () => {
         <section className="hidden xs:flex flex-col items-center text-center justify-around">
           <article>
             <h2 className="font-semibold">Chance of rain</h2>
-            {rainProbability == null ? (
-              <div className="rounded mb-4 h-4 w-full animate-pulse bg-white"></div>
+            {rainProbability === undefined ? (
+              <h1 className="text-xl">No data</h1>
+            ) : isLoading ? (
+              <SkeletonText fontSize={"xl"} width={"w-full"} />
             ) : (
               <h1 className="text-xl">{rainProbability}%</h1>
             )}
           </article>
           <article>
             <h2 className="font-semibold">Wind</h2>
-            {windSpeed == null ? (
-              <div className="rounded mb-4 h-4 w-16 animate-pulse bg-white"></div>
+            {windSpeed === undefined ? (
+              <h1 className="text-xl">No Data</h1>
+            ) : isLoading ? (
+              <SkeletonText fontSize={"xl"} width={"w-28"} />
             ) : (
               <h1 className="text-xl">{windSpeed} km/h</h1>
             )}
@@ -92,22 +111,28 @@ export const WeatherTodayCard = () => {
 
         <section className="flex flex-col justify-between items-end">
           <article className="-mt-6">
-            {weatherDayIcon == null ? (
+            {weatherDayIcon === undefined ? (
               <WeatherIcon iconNumber={7} iconSize={"xl"} />
+            ) : isLoading ? (
+              <SkeletonImageLoader size={"xl"} />
             ) : (
               <WeatherIcon iconNumber={weatherDayIcon} iconSize={"xl"} />
             )}
 
-            {weatherDayIconPhrase == null ? (
-              <p className="flex justify-center rounded mb-4 h-4 text-center w-16 animate-pulse bg-white"></p>
+            {weatherDayIconPhrase === undefined ? (
+              <p className="pt-2.5 flex text-xs justify-center">No Data</p>
+            ) : isLoading ? (
+              <SkeletonText fontSize={"xs"} width={"w-full"} />
             ) : (
               <p className="pt-2.5 flex text-xs justify-center">{`"${weatherDayIconPhrase}"`}</p>
             )}
           </article>
           <article className="space-x-4 hidden xxxs:flex items-center self-end mr-6 justify-between">
             <h1 className="font-semibold pt-4">Night:</h1>
-            {weatherNightIcon == null ? (
+            {weatherNightIcon === undefined ? (
               <WeatherIcon iconNumber={7} iconSize={"sm"} />
+            ) : isLoading ? (
+              <SkeletonImageLoader size={"sm"} />
             ) : (
               <WeatherIcon iconNumber={weatherNightIcon} iconSize={"sm"} />
             )}
