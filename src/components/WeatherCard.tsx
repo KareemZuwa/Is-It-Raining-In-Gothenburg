@@ -12,7 +12,6 @@ import { SkeletonCard } from "../utils/SkeletonCard";
 export const WeatherCard = () => {
   const { data, isLoading } = useFiveDaysForecast();
   const fourDaysForeCast = data?.DailyForecasts.slice(1);
-  console.log(fourDaysForeCast);
 
   return (
     <article className="hidden xxs:flex flex-wrap justify-between -mx-4">
@@ -22,7 +21,7 @@ export const WeatherCard = () => {
             No Weather Data for the upcoming four days were found
           </h1>
         </div>
-      ) : !isLoading ? (
+      ) : isLoading ? (
         <div className="w-full flex justify-between flex-wrap">
           <SkeletonCard />
           <SkeletonCard />

@@ -1,6 +1,6 @@
 import { useOneDayForecastQuery } from "../queries/OneDayForecastQueries";
 import { SkeletonImageLoader } from "../utils/SkeletonImageLoader";
-import { SkeletonText } from "../utils/SkeletonLoaders";
+import { SkeletonText } from "../utils/SkeletonTextLoader";
 import {
   getMonthString,
   getNumericDayString,

@@ -5,7 +5,7 @@ import {
   getNumericDayString,
   getWeekDayString,
 } from "../utils/dateUtils";
-import { SkeletonText } from "../utils/SkeletonLoaders";
+import { SkeletonText } from "../utils/SkeletonTextLoader";
 import { SkeletonImageLoader } from "../utils/SkeletonImageLoader";
 
 export const WeatherTodayCardSmall = () => {

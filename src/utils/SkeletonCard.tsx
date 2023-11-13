@@ -1,5 +1,5 @@
 import { SkeletonImageLoader } from "./SkeletonImageLoader";
-import { SkeletonText } from "./SkeletonLoaders";
+import { SkeletonText } from "./SkeletonTextLoader";
 
 export const SkeletonCard = () => (
   <div className="relative min-w-[193px] h-[289px] shadow-2xl rounded-xl mb-8 mx-4">
