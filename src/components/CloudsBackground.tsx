@@ -1,4 +1,5 @@
 import { useOneDayForecastQuery } from "../queries/OneDayForecastQueries";
+import { determineWeatherConditions } from "../utils/determineWeatherConditions";
 import { Moon } from "./Moon";
 import { Raindrops } from "./Raindrops";
 import { SnowFall } from "./SnowFall";
@@ -11,10 +12,11 @@ interface CloudsBackgroundProps {
 
 export const CloudsBackground = ({ isDay }: CloudsBackgroundProps) => {
   const { data } = useOneDayForecastQuery();
-  console.log(data?.DailyForecasts[0].Day.Icon);
-  console.log(data?.DailyForecasts[0].Night.Icon);
-  const isRain = false;
-  const isSnow = false;
+
+  const icon = isDay
+    ? data?.DailyForecasts[0].Day.Icon
+    : data?.DailyForecasts[0].Night.Icon;
+  const { isRain, isSnow } = determineWeatherConditions({ icon, isDay });
 
   return (
     <div className="opacity-30 lg:opacity-100 absolute inset-0 m-auto max-w-screen-2xl">

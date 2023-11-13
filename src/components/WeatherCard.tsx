@@ -1,4 +1,4 @@
-import { useFiveDaysForecast } from "../queries/FiveDaysForecastQueries";
+import { useFiveDaysForecastQuery } from "../queries/FiveDaysForecastQueries";
 import { WeatherIcon } from "./WeatherIcon";
 import {
   getMonthString,
@@ -10,7 +10,7 @@ import {
 import { SkeletonCard } from "../utils/SkeletonCard";
 
 export const WeatherCard = () => {
-  const { data, isLoading } = useFiveDaysForecast();
+  const { data, isLoading } = useFiveDaysForecastQuery();
   const fourDaysForeCast = data?.DailyForecasts.slice(1);
 
   return (

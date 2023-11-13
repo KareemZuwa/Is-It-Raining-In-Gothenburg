@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { FiveDaysForecasts } from "../interfaces/fiveDaysForecastsTypes";
 
-export const useFiveDaysForecast = () => {
+export const useFiveDaysForecastQuery = () => {
   return useQuery<
     FiveDaysForecasts,
     Error,
@@ -17,7 +17,9 @@ export const useFiveDaysForecast = () => {
       );
 
       if (!response.ok) {
-        throw new Error("Network response was not OK");
+        throw new Error(
+          `Network response was not OK. Status: ${response.status}`
+        );
       }
 
       return (await response.json()) as FiveDaysForecasts;

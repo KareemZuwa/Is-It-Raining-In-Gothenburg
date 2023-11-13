@@ -17,7 +17,9 @@ export const useOneDayForecastQuery = () => {
       );
 
       if (!response.ok) {
-        throw new Error("Network response was not OK");
+        throw new Error(
+          `Network response was not OK. Status: ${response.status}`
+        );
       }
 
       return (await response.json()) as OneDayForecast;

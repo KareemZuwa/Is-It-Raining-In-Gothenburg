@@ -1,6 +1,10 @@
 import { useOneDayForecastQuery } from "../queries/OneDayForecastQueries";
 
-export const Header = () => {
+interface HeaderProps {
+  isDay: boolean;
+}
+
+export const Header = ({ isDay }: HeaderProps) => {
   const { data } = useOneDayForecastQuery();
 
   return (
@@ -16,7 +20,11 @@ export const Header = () => {
       <div className="ml-4 sm:ml-8 w-2/5 h-4 sm:h-auto border-b border-white border-solid overflow-hidden"></div>
       <div className="hidden sm:block pl-8 pt-6 xl:w-[400px]">
         <div>Forecast Headline:</div>
-        <div>{`"${data?.Headline.Text}"`}</div>
+        <div>
+          {isDay
+            ? `"${data?.DailyForecasts[0].Day.LongPhrase}"`
+            : `"${data?.DailyForecasts[0].Night.LongPhrase}"`}
+        </div>
       </div>
     </header>
   );

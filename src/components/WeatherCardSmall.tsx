@@ -1,4 +1,4 @@
-import { useFiveDaysForecast } from "../queries/FiveDaysForecastQueries";
+import { useFiveDaysForecastQuery } from "../queries/FiveDaysForecastQueries";
 import { WeatherIcon } from "./WeatherIcon";
 import {
   getMonthString,
@@ -9,7 +9,7 @@ import {
 import { SkeletonText } from "../utils/SkeletonTextLoader";
 
 export const WeatherCardSmall = () => {
-  const { data, isLoading } = useFiveDaysForecast();
+  const { data, isLoading } = useFiveDaysForecastQuery();
   const fourDaysForeCast = data?.DailyForecasts.slice(1);
 
   return (

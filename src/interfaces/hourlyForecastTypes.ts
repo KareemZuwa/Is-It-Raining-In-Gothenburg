@@ -16,3 +16,23 @@ export interface HourlyForecast {
   MobileLink: string;
   Link: string;
 }
+
+export interface MinuteCastForecast {
+  Summary: WeatherSummary;
+  Summaries: MinuteSummary[];
+  Link: string;
+  MobileLink: string;
+}
+interface WeatherSummary {
+  Phrase: string;
+  Type: null | string;
+  TypeId: number;
+}
+interface MinuteSummary {
+  StartMinute: number;
+  EndMinute: number;
+  CountMinute: number;
+  MinuteText: string;
+  Type: null | string;
+  TypeId: number;
+}
